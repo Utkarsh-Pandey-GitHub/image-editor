@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Next.js App Router Chrome Extension",
+    "version": "1.0",
+    "description": "A Chrome extension built with Next.js App Router",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "icons/icon.svg"
+    },
+    "permissions": [
+      "activeTab"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "icons": {
+      "48": "icons/icon.svg"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
